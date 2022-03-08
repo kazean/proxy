@@ -1,0 +1,11 @@
+AInterface
+ call():String
+AImpl
+BInterface
+BImpl
+
+TimeInvocationHandler > 시간출력
+
+JdkDynamicProxyTest
+ dynamicA
+ dynamicB

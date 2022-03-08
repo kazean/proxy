@@ -1,0 +1,15 @@
+ServiceInterface
+  void save()
+  void find()
+ServiceImpl > slf4j
+
+ConcreteService
+  void call() > slf4j
+
+
+#package hello.proxy.cglib.code;
+TimeMethodInterceptor
+>>
+CglibTest
+cglib()
+  ConcreteService(); CGLIB 프록시구현 및 출력
