@@ -1,35 +1,29 @@
-package hello.proxy.config.v1_dynamicproxy.handler;
+package hello.proxy.config.v2_dynamicproxy.handler;
 
 import hello.proxy.trace.TraceStatus;
 import hello.proxy.trace.logtrace.LogTrace;
-import org.springframework.util.PatternMatchUtils;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class LogTraceFilterHandler implements InvocationHandler {
+public class LogTraceBasicHandler implements InvocationHandler {
 
     private final Object target;
     private final LogTrace logTrace;
-    private final String[] patterns;
 
-    public LogTraceFilterHandler(Object target, LogTrace logTrace, String[] patterns) {
+    public LogTraceBasicHandler(Object target, LogTrace logTrace) {
         this.target = target;
         this.logTrace = logTrace;
-        this.patterns = patterns;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         TraceStatus status = null;
 
-        if(!PatternMatchUtils.simpleMatch(patterns, method.getName())){
-            return method.invoke(target, args);
-        }
-
         try{
             String message = method.getDeclaringClass().getSimpleName() + "." + method.getName() + "()";
             status = logTrace.begin(message);
+//            String result = target.request(itemId);
             Object result = method.invoke(target, args);
             logTrace.end(status);
 

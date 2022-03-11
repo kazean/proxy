@@ -1,0 +1,30 @@
+#AdvisorTest
+void advisorTest1
+  ServiceImpl
+  Pointcut.TRUE, TimeAdvisor
+
+void advisorTest2
+  ServiceImpl
+  MyPointcut : save(), TimeAdvisor
+
+@DisplayName("스프링이 제공하는 포인트컷")
+void advisorTest3
+  ServiceImpl
+  NameMatchMethodPointCut, DefaultPointcutAdvisor
+
+
+#MultiAdvisorTest
+@Test
+@DisplayName("여러 프록시")
+void multiAdvisorTest1() {
+  //client -> proxy2(advisor2) -> proxy1(advisor1) -> target
+  Advisor2 slf4j
+  Advisor1 slf4j
+  ServiceImpl
+{
+
+@Test
+@DisplayName("하나의 프록시, 여러 어드바이저")
+void multiAdvisorTest2() {
+
+}

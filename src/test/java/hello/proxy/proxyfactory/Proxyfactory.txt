@@ -1,0 +1,16 @@
+ProxyFactoryTest
+
+@Test
+@DisplayName("인터페이스가 있으면 JDK 동적 프록시 사용")
+void interfaceProxy()
+  ServiceImpl, TimeAdvice
+
+@Test
+@DisplayName("구체 클래스만 있으면 CGLIB 사용")
+void concreteProxy()
+  ConcreteService, TimeAdvice
+
+@Test
+@DisplayName("ProxyTargetClass 옵션을 사용하면 인터페이스가 있어도 CGLIB를 사용하고, 클래스기반 프록시 사용")
+void proxyTargetClass()
+ ServiceImpl, TimeAdvice
