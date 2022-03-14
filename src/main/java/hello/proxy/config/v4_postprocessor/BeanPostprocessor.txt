@@ -1,0 +1,12 @@
+PackageLogTraceProxyPostProcessor > BeanPostprocessor
+  String basePackageName;
+  Advisor advisor;
+
+  postProcessorAfterInitialization();
+
+@Import > AppV1Config, AppV2Config
+BeanPostProcessorConfig
+@Bean
+public PackageLogTraceProxyPostProcessor logTraceProxyPostProcessor(LogTrace logTrace) {
+
+}

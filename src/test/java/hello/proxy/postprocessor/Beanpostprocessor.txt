@@ -1,0 +1,17 @@
+BasicTest
+@Test  void basicConfig() // A bean 생성 실행, B 빈 생성안할시 검증
+
+static A, B class
+  helloA(), helloB() //@Slf4j
+
+@Configuration
+BasicConfig
+  ApplicationContext
+
+
+BeanPostProcessorTest
+
+@Test
+void postProcessor() // A빈네임 B빈반환, A class NoSuchBeanDefintionException
+
+BeanPostProcessorConfig A빈 등록, BeanPostprocessor등록
